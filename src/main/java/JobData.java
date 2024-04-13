@@ -107,14 +107,6 @@ public class JobData {
                 }
             }
         }
-
-
-
-
-
-
-
-
         // TODO - implement this method
         return jobs;
     }
