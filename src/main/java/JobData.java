@@ -92,7 +92,7 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();    //used to return matches found for all keys
 
         for (int a = 0; a < allJobs.size(); a++) {
             HashMap<String, String> tmpData = (HashMap<String, String>) allJobs.get(a);
@@ -100,10 +100,10 @@ public class JobData {
             Iterator it = key.iterator();
             while (it.hasNext()) {
                 String hmKey = (String) it.next();
-                String hmData = tmpData.get(hmKey).toLowerCase();
+                String hmData = tmpData.get(hmKey).toLowerCase();  //tests for case insensitive
                 if (hmData.contains(value)) {
                     jobs.add(allJobs.get(a));
-//                    continue;
+                    break;                                         //stop processing record to avoid duplicates
                 }
             }
         }
