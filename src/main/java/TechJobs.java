@@ -125,16 +125,13 @@ public class TechJobs {
                 HashMap<String, String> tmpData = (HashMap<String, String>) someJobs.get(a);
                 Set<String> key = tmpData.keySet();
                 Iterator it = key.iterator();
-//                for (int i = 0; i < 5; i++) {
                     while (it.hasNext()) {
                         String hmKey = (String) it.next();
-                        String hmData = (String) tmpData.get(hmKey);
+                        String hmData = tmpData.get(hmKey);
                         System.out.println(hmKey + ": " + hmData);
                     }
-//                }
-
+            System.out.print("*****\n");
             }
-            System.out.println("*****");
         } else {
             System.out.print("No Results");
         }

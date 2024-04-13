@@ -94,9 +94,29 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
+        for (int a = 0; a < allJobs.size(); a++) {
+            HashMap<String, String> tmpData = (HashMap<String, String>) allJobs.get(a);
+            Set<String> key = tmpData.keySet();
+            Iterator it = key.iterator();
+            while (it.hasNext()) {
+                String hmKey = (String) it.next();
+                String hmData = tmpData.get(hmKey).toLowerCase();
+                if (hmData.contains(value)) {
+                    jobs.add(allJobs.get(a));
+//                    continue;
+                }
+            }
+        }
+
+
+
+
+
+
+
 
         // TODO - implement this method
-        return null;
+        return jobs;
     }
 
     /**
